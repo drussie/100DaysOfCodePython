@@ -5,10 +5,9 @@ import random
 from replit import clear
 
 score = 0
+print(hl_art.logo)
 
 def play_game():
-    clear()
-    print(hl_art.logo)
     print("Welcome to the Higher Lower Game!")
     print("Can you guess who has more followers on Instagram?")
 
@@ -30,6 +29,9 @@ def play_game():
 
         choice  = input("Who has more followers? Type 'A' or 'B': ").lower()
 
+        clear()
+        print(hl_art.logo)
+        
         if choice == 'a':
                 if choice == 'a' and choice_a['follower_count'] > choice_b['follower_count']:
                     score += 1
