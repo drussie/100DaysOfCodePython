@@ -21,12 +21,20 @@ class Snake:
         for i in range(NUM_SQUARES):
             self.add_square(X_COORDINATE)
             X_COORDINATE += -20
+
     def add_square(self, X_COORDINATE):
         new_square = Turtle(shape="square")
         new_square.color('white')
         new_square.penup()
         new_square.goto(X_COORDINATE, 0.0)
         self.squares.append(new_square)
+
+    def reset(self):
+        for square in self.squares:
+            square.goto(1000, 1000)
+        self.squares.clear()
+        self.create_snake()
+        self.head = self.squares[0]
 
     def extend(self):
         # Get the position of the last square in the snake
